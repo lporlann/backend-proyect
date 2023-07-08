@@ -1,0 +1,16 @@
+{
+  "name": "backend-nodejs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "productManager.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "shortid": "^2.2.16"
+  }
+}

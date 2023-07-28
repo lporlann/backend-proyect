@@ -119,34 +119,40 @@ class ProductManager {
 
 
 
-const productManager = new ProductManager();
+// const productManager = new ProductManager();
 
-await productManager.addProduct('producto prueba 1' , 'producto de prueba' , 15000 , '/images' , 27);
-await productManager.addProduct('producto prueba 2' , 'producto de prueba' , 25000 , '/images' , 27);
-await productManager.addProduct('producto prueba 3' , 'producto de prueba' , 35000 , '/images' , 27);
-await productManager.addProduct('producto prueba 4' , 'producto de prueba' , 45000 , '/images' , 27);
+// await productManager.addProduct('producto prueba 1' , 'producto de prueba' , 15000 , '/images' , 27);
+// await productManager.addProduct('producto prueba 2' , 'producto de prueba' , 25000 , '/images' , 27);
+// await productManager.addProduct('producto prueba 3' , 'producto de prueba' , 35000 , '/images' , 27);
+// await productManager.addProduct('producto prueba 4' , 'producto de prueba' , 45000 , '/images' , 27);
+
+
+export default ProductManager;
 
 
 
-const productById =  await productManager.getProductById(2);
-const productByIdd =  await productManager.getProductById(7);
 
-await productManager.updateProduct({
-    id: 1,
-    name: 'producto de prueba actualizado',
-    description : 'producto actualizado'
-})
+// const productById =  await productManager.getProductById(2);
+// const productByIdd =  await productManager.getProductById(7);
 
-await productManager.deleteProduct(9)
-await productManager.deleteProduct(2)
+// await productManager.updateProduct({
+//     id: 1,
+//     name: 'producto de prueba actualizado',
+//     description : 'producto actualizado'
+// })
 
-const products = await productManager.getProducts();
+// await productManager.deleteProduct(9)
+// await productManager.deleteProduct(2)
+
+// const products = await productManager.getProducts();
+
+
 
  
 
-console.log(products)
-console.log(productById)
-console.log(productByIdd)
+// console.log(products)
+// console.log(productById)
+// console.log(productByIdd)
 
 
 

@@ -14,10 +14,27 @@ app.get('/' , (req , res) =>{
 
 
 app.get('/products' , async (req , res) => {
-  const resp = await productManager.getProducts()
-  res.send(({resp}))
+  const products = await productManager.getProducts();
+  const {limit} = req.query;
+
+  if(limit){
+    const limitResponse = products.slice(0 , limit)
+    res.send({limitResponse})
+  }else{
+    res.send(products)
+  }
+  
 })
 
+app.get("/products/:pid", async (req, res) => {
+  const id = parseInt(req.params.pid);
+  const product = await productManager.getProductById(id);
+  if (product) {
+    res.send({product});
+  } else {
+    res.send({ message: "Product not found" });
+  }
+});
 
 
 app.listen(8080, () => {

@@ -7,7 +7,7 @@ class ProductManager {
     constructor(){
         this.products = [];
         this.currentId = 1;
-        this.path = './data/products.json'
+        this.path = '../data/products.json'
 
     }
 

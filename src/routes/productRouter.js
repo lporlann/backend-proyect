@@ -1,7 +1,8 @@
 import { Router } from "express";
-import productManager from "../managers/productManager.js"
+import __dirname from "../utils.js";
+import ProductManager from "../managers/productManager.js";
 
-const pManager = new productManager()
+const pManager = new ProductManager(`${__dirname}/data/products.json`)
 const productRouter = Router()
 
 
@@ -28,6 +29,15 @@ productRouter.get("/:pid", async (req, res) => {
       res.send({ message: "Product not found" });
     }
   });  
+
+  productRouter.post('/', async (req, res) => {
+    const body = req.body;
+    const product = await pManager.addProduct(body)
+    if(!product) {
+        return res.status(400).send({ error: `error` })
+    } 
+    res.send({ status: 'success', payload: product })
+})
 
 
 

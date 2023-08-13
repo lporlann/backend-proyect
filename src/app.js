@@ -1,7 +1,7 @@
 import  express  from "express"
 // import ProductManager from "./managers/productManager.js"
 import productRouter from "./routes/productRouter.js";
-
+import __dirname from "./utils.js";
 
 const app = express()
 

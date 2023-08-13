@@ -1,20 +1,22 @@
 
 import shortid from "shortid";
 import {promises as fs} from "fs"
+import __dirname from "../utils.js";
+
 
 class ProductManager {
 
-    constructor(){
+    constructor(path){
         this.products = [];
-        this.currentId = 1;
-        this.path = '../data/products.json'
+        
+        this.path = path
 
     }
 
     async  addProduct  (name , description , price , thumbnail ,stock , code)  {
         try{
             const product = {
-                id : this.currentId,
+                
                 name : name,
                 description : description,
                 price : price,
@@ -26,8 +28,15 @@ class ProductManager {
             }
             const validateCode = this.products.find(product => product.code === code)
                 if(!validateCode){
-                    this.products.push(product);
-                    this.currentId++;
+                    let id;
+                    if(this.products.length == 0) {
+                        id = 1
+                        } else {
+                    id = this.products[this.products.length -1].id + 1
+                    }
+                    
+                    this.products.push({...product , id});
+                    
                     await fs.writeFile(this.path , JSON.stringify(this.products) , 'utf-8');
                 }
                 else{

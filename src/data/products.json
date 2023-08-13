@@ -1,0 +1,13 @@
+[
+    {
+        "name": {
+            "name": "producto prueba 4",
+            "description": "producto de prueba",
+            "price": 45000,
+            "thumbnail": "/images",
+            "stock": 27
+        },
+        "code": "VmX253X1_",
+        "id": 1
+    }
+]
